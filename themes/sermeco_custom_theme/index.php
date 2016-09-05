@@ -13,6 +13,10 @@
 	<?php  
 		#Incluir plantilla de Slider Home
 		include( locate_template("partials/slider-home/slider-home.php") );
+
+		#Incluir plantilla de Carousel de Servicios
+		include( locate_template("partials/home/slider-services.php") );
+		
 	?>
 
 

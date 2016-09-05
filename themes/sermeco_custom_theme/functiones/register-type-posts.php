@@ -44,7 +44,7 @@ function create_post_type(){
 		'not_found_in_trash' => __('Servicio no encontrado en la papelera'),
 	);
 
-	$args_producto = array(
+	$args_services = array(
 		'labels'      => $labels_services,
 		'has_archive' => true,
 		'public'      => true,
@@ -52,7 +52,7 @@ function create_post_type(){
 		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes' ),
 		'show_ui' => true,
 		'taxonomies'  => array( 'post_tag' ),
-		'menu_icon'   => 'dashicons-cart',
+		'menu_icon'   => 'dashicons-chart-pie',
 	);
 
 	/*|-----PRODUCTOS ----------------------|*/
