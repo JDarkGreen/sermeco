@@ -1,0 +1,78 @@
+/** ARCHIVO DONDE SE ENCUENTRAN LOS CAROUSELES DEL TEMA **/
+
+
+/***************************************************************************************/
+/**-- 1.1 CAROUSEL SLIDER HOME   --------------------------------------------------------**/
+/***************************************************************************************/
+
+#slider-home
+	
+	//Contenido
+	.slider-content
+		bottom    : 0
+		box-sizing: border-box
+		position  : absolute
+		width     : 100%
+		padding   : 30px 0 80px 
+		background: rgba( 0,0,0,.4 )
+		//TITULO
+		h2 
+			color          : #fff
+			font-family    : 'Roboto' , sans-serif
+			font-size      : 3.692em
+			font-weight    : 700
+			text-align     : center
+			text-decoration: none !important
+			top            : 31px	
+			width          : 100%
+		//Span
+		span 
+			color          : #fff
+			font-size      : 2em
+			display        : block 
+			text-align     : center
+			text-decoration: none !important
+			width          : 100%
+
+
+	//Flechas
+	.owl-controls 
+		.owl-nav
+			.owl-prev , .owl-next
+				cursor     : pointer
+				height     : 70px
+				text-indent: -9999px
+				position   : absolute
+				width      : 61px
+				top        : 0
+				display    : block
+
+			.owl-prev
+				background : transparent url('../../images/sprite.png') no-repeat 0 -66px
+				left       : 0
+
+			.owl-next
+				background : transparent url('../../images/sprite.png') no-repeat -61px -66px
+				right      : 0
+		
+		//Indicadores
+		.owl-dots
+			bottom    : 45px
+			position  : absolute
+			text-align: center
+			width     : 100%
+			//Indicador
+			.owl-dot
+				+border-radius( 20px )
+				background-color: transparent
+				border          : 3px solid #999
+				display         : inline-block
+				height          : 16px
+				margin-right    : 7px
+				text-indent     : -9999px
+				width           : 16px
+				+transition( all 500ms ease-in )
+				//active
+				&.active 
+					background: white
+					border    : 3px solid white 

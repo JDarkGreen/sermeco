@@ -1,0 +1,82 @@
+/*----------------------------------------------------------------------------------*/
+/*--------------------- ARCHIVO HEADER  DE PÁGINA ----------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+
+.mainHeader
+
+	/** [ LOGO ] **/
+	.logo 
+		margin   : 0 auto 
+		max-width: 327px
+
+/**[SLOGAN]**/
+.mainHeader__slogan
+	color    : rgb(85, 85, 85)
+	font-size: 12px 
+	i 
+		display       : inline-block
+		vertical-align: middle
+
+/*[LINKS ]*/
+ul.mainHeader__links
+	list-style-type: none 
+	margin         : 0
+	padding        : 0 
+	line-height    : 1 
+	li 
+		display: inline-block
+		a 
+			border-right   : 1px solid rgb(0, 51, 102)
+			color          : rgb(0, 51, 102)
+			display        : block 
+			font-size      : 12px 
+			padding        : 0 4px 
+			text-decoration: none 
+		//Ultimo elemento
+		&:last-child
+			a 
+				border: none
+
+
+//****************************
+// MAIN NAVIGATION
+//****************************
+
+nav.mainNavigation
+	background: #0073C3
+	margin    : 10px auto
+	ul 
+		//MAIN MENU
+		&.main-menu
+			display        : flex
+			list-style-type: none 
+			margin         : 0 
+			padding        : 0
+			li 
+				display: inline-block
+				padding: 12px 0 
+				+transition( all 500ms cubic-bezier(.5,.5,.5, 1 ) )
+				a 
+					border-right   : 1px solid rgba( 255, 255 , 255 ,.6 )
+					color          : white
+					display        : block
+					font-size      : 14px 
+					line-height    : 1
+					padding        : 6px 46px
+					text-decoration: none
+				//Selected o active
+				&.active , &.current-menu-item , &.current_page_item
+					background: #618fcc
+				//Only home 
+				&.home 
+					a 
+						padding: 0 20px 
+						i 
+							font-size: 23px
+				//Hover Li
+				&:hover 
+					background: #065BA0
+					+scale( 1.05 )
+
+
