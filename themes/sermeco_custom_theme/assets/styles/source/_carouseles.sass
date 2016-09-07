@@ -2,10 +2,11 @@
 
 
 /***************************************************************************************/
-/**-- 1.1 CAROUSEL SLIDER HOME   --------------------------------------------------------**/
+/**-- 1.1 CAROUSEL SLIDER HOME   -----------------------------------------------------**/
 /***************************************************************************************/
 
 #slider-home
+	margin: 0 auto 16px
 	
 	//Contenido
 	.slider-content
@@ -78,4 +79,39 @@
 					border    : 3px solid white 
 
 
+/***************************************************************************************/
+/**-- 1.1 CAROUSEL SERVICIOS HOME  ---------------------------------------------------**/
+/***************************************************************************************/
 
+#carousel-services
+	//Item preview
+	.itemPreviewService
+		//Titulo
+		h2 
+			color    : white 
+			font-size: 15px 
+			margin   : 0 
+			padding  : 10px 0 
+		//Figure
+		figure 
+			background-size: cover
+			height         : 120px 
+			width          : 100%
+			margin         : 0 auto 14px 
+		//Extracto
+		.content-excerpt
+			font-size : 14px
+
+//Flechas de Carousel
+.arrowCarousel__services 
+	color          : #0074C3
+	font-size      : 35px 
+	text-decoration: none !important
+	display        : inline-block
+	margin         : 0 3px 
+	//focus 
+	&:focus 
+		text-decoration: none !important
+	//hover
+	&:hover 
+		+animation( pulse 1s ease-in-out infinite )

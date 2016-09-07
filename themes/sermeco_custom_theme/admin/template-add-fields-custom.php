@@ -272,7 +272,7 @@ function custom_settings_section_nosotros_callback()
 	echo __( 'Personaliza los campos correspondientes:', 'LANG' );
 }
 
-//META LOGO
+//META 
 add_settings_field( 'theme_meta_presentacion', __( 'Presentación', 'LANG' ), 'custom_presentacion_render', 'customThemePageNosotros', PREFIX."_themePage_section_nosotros" );
 //Renderizado 
 function custom_presentacion_render() 
@@ -292,17 +292,20 @@ function custom_presentacion_render()
 	<textarea name="theme_settings[theme_meta_presentacion][0]" style="width:450px;height:250px;max-height:300px;"><?= isset($presentation[0]) && !empty($presentation[0]) ? trim($presentation[0]) : ""; ?> 
 	</textarea>	
 
+	<?php /*
 	<!-- Parte 2 -->
 	<p class="description"> Segunda Parte </p>
 
 	<textarea name="theme_settings[theme_meta_presentacion][1]" style="width:450px;height:250px;max-height:300px;"><?= isset($presentation[1]) && !empty($presentation[1]) ? trim($presentation[1]) : ""; ?> 
 	</textarea>	
+
+	*/?>
 		
 	<?php
 }
 
 //BROCHURE
-add_settings_field( 'theme_meta_brochure', __( 'Brochure Empresa:', 'LANG' ), 'custom_theme_brochure_render', 'customThemePageNosotros', PREFIX."_themePage_section_nosotros" );
+/*add_settings_field( 'theme_meta_brochure', __( 'Brochure Empresa:', 'LANG' ), 'custom_theme_brochure_render', 'customThemePageNosotros', PREFIX."_themePage_section_nosotros" );
 //Renderizado 
 function custom_theme_brochure_render() 
 { 
@@ -347,7 +350,7 @@ function custom_theme_brochure_render()
 }
 
 
-//BROCHURE
+//GALERIA NOSOTROS
 add_settings_field( 'theme_meta_gallery_nosotros', __( 'Galería Presentación:', 'LANG' ), 'custom_theme_gallery_nosotros__render', 'customThemePageNosotros', PREFIX."_themePage_section_nosotros" );
 
 //Renderizado 
@@ -381,9 +384,9 @@ function custom_theme_gallery_nosotros__render()
 				$meta_img_ids = array_filter( $meta_img_ids ); 
 
 				#var_dump($meta_img_ids);
-				/*$meta_img_ids = array_filter( $meta_img_ids , function( $item ) {
+				$meta_img_ids = array_filter( $meta_img_ids , function( $item ) {
     				return array_filter( $item , 'strlen' );
-    			});*/
+    			});
 
 				foreach ( $meta_img_ids as $meta_img_id ) : 
 
@@ -438,8 +441,9 @@ function custom_theme_gallery_nosotros__render()
 
 
 <?php
-
 }
+
+*/
 
 
 //MISION

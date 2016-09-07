@@ -84,6 +84,20 @@ var j = jQuery.noConflict();
 		/* end conditional */
 		}
 
+		/*|°°------------- Flechas del carousel ---------------°°|*/
+		//prev carousel
+		j(".js-carousel-prev").on('click',function(e){ 
+			e.preventDefault();
+			var slider = j(this).attr('data-slider');	
+			j("#"+slider).trigger('prev.owl.carousel' , [900] );
+		});
+		//next carousel
+		j(".js-carousel-next").on('click',function(e){ 
+			e.preventDefault();
+			var slider = j(this).attr('data-slider');	
+			j("#"+slider).trigger('next.owl.carousel' , [900] );
+		});
+
 
 	/*|- end of document -|*/
 	});

@@ -4,7 +4,7 @@
 /** Importar Fuentes **/
 
 //Roboto
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,700'
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700'
 
 //Monserrate
 @import 'https://fonts.googleapis.com/css?family=Montserrat'
@@ -128,28 +128,60 @@ body.admin-bar
 /**--  PAGINA INICIO  ----------------------------------------------------------------**/
 /***************************************************************************************/
 
-/** [ ITEM PREVIEW PRODUCTO ] **/
-.itemPreview__producto
-	border     : 1px solid #9C9A9F
-	font-family: "Montserrat", sans-serif
-	margin     : 0 auto 28px
-	padding    : 12px 0 30px
-	//Titulo
-	h2
-		font-size  : 20px
-		font-weight: 600
+/** [ SECCION PRESENTATION ] **/
+.pageInicio__presentation
+	background: #F2F2F2
+	padding   : 68px 0 20px 
+	//Título
+	h2 
+		color      : #4F4F4F
+		display    : block
+		font-family: "Roboto",sans-serif
+		font-size  : 2.3em
+		font-weight: 300
+	//Texto
+	.content-presentation
+		p 
+			font-size: 14px 
+			margin   : 0 auto 15px 
 
-/** [ BOTON COMPRAR ]**/
-.btn__buy
-	+border-radius (8px )
-	+box-shadow( inset -1px -1px 4px #F0BC9E )
-	+transition( all 500ms ease )
-	-webkit-backface-visibility: hidden
-	background                 : #FFD9B9
-	color                      : #200D06
-	display                    : inline-block
-	padding                    : 10px 45px
-	text-decoration            : none
+	//Facebook
+	.content-facebook
+		display: block 
+		width  : 20%
+		//span 
+		span 
+			color      : silver
+			display    : block
+			font-size  : 18px
+			font-weight: bold
+			margin     : 0 auto 24px 
+		//Ícono
+		.icon-facebook
+			+border-radius( 50% )
+			+box-shadow( 0 0 0 4px transparent )
+			align-items    : center 
+			background     : #DCDCDC 
+			border         : 3px solid transparent 
+			color          : white 
+			display        : flex
+			height         : 73px 
+			justify-content: center 
+			text-decoration: none 
+			width          : 73px
+			+transition( all 200ms cubic-bezier(.5,.5,.5,1) )
+			//
+			i 
+				font-size: 40px
+			//Hover icon
+			&:hover 
+				+box-shadow( 0 0 0 4px #3B5998 )
+				background: #3B5998
+				border    : 3px solid white 
+
+
+
+
 
 
 /***************************************************************************************/

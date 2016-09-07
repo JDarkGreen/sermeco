@@ -16,11 +16,14 @@
 
 		#Incluir plantilla de Carousel de Servicios
 		include( locate_template("partials/home/slider-services.php") );
-		
 	?>
-
-
 </div> <!-- /.pageWrapperLayout -->
+
+<?php   #Incluir plantilla de Compromiso - Presentación
+	include( locate_template("partials/home/section-presentation.php") );
+?>	
+
+
 
 
 <!-- Footer -->
