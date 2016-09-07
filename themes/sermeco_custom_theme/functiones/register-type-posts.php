@@ -80,6 +80,31 @@ function create_post_type(){
 		'menu_icon'   => 'dashicons-format-gallery',
 	);
 
+	/*|----- GALERIA DE CLIENTES ----------------------|*/
+	
+	$labels_clients = array(
+		'name'               => __('Gal. Clientes'),
+		'singular_name'      => __('Gal. Cliente'),
+		'add_new'            => __('Nuevo Gal. Cliente'),
+		'add_new_item'       => __('Agregar nuevo Gal. Cliente'),
+		'edit_item'          => __('Editar Gal. Cliente'),
+		'view_item'          => __('Ver Gal. Cliente'),
+		'search_items'       => __('Buscar Gal. Clientes'),
+		'not_found'          => __('Gal. Cliente no encontrado'),
+		'not_found_in_trash' => __('Gal. Cliente no encontrado en la papelera'),
+	);
+
+	$args_clients = array(
+		'labels'      => $labels_clients,
+		'has_archive' => true,
+		'public'      => true,
+		'hierachical' => false,
+		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes' ),
+		'show_ui' => true,
+		'taxonomies'  => array( 'post_tag' ),
+		'menu_icon'   => 'dashicons-groups',
+	);
+
 
 	/*|REGISTRAR|*/
 	
@@ -91,6 +116,9 @@ function create_post_type(){
 
 	#GALERIA IMAGENES
 	register_post_type( 'theme-gallery-images' , $args_gallery );
+
+	#GALERIA CLIENTES
+	register_post_type( 'theme-gal-clients' , $args_clients );
 
 
 

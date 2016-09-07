@@ -11,8 +11,8 @@ function load_admin_custom_enqueue() {
 	//upload single image
 	wp_enqueue_script('upload-single-image', THEMEROOT . '/admin/assets/js/media-upload-single-image.js', array('jquery'), '', true);  
 	
-	//upload gallery a todas la paginas
-	//wp_enqueue_script('upload-gallery', THEMEROOT . '/admin/assets/js/metabox-gallery.js', array('jquery'), '', true);	
+	//galería de imágenes a tipos de post y páginas
+	wp_enqueue_script('upload-container-gallery', THEMEROOT . '/admin/assets/js/upload-container-gallery.js', array('jquery'), '', true);	
 	
 	//upload gallery a contenedores
 	//wp_enqueue_script('upload-container-gallery', THEMEROOT . '/admin/assets/js/container-gallery.js', array('jquery'), '', true);	

@@ -19,11 +19,10 @@
 	?>
 </div> <!-- /.pageWrapperLayout -->
 
-<?php   #Incluir plantilla de Compromiso - Presentación
-	include( locate_template("partials/home/section-presentation.php") );
+<?php   
+	#Incluir plantilla de Compromiso - Presentación
+	include( locate_template("partials/home/section-presentation.php") );  
 ?>	
-
-
 
 
 <!-- Footer -->

@@ -5,8 +5,10 @@
 
 function register_my_menus(){
 	register_nav_menus(
+
 		array(
-			'main-menu' => __('Main Menu', LANG ),
+			'main-menu'   => __('Main Menu', LANG ),
+			'footer-menu' => __('Footer Menu', LANG ),
 		)
 	);
 }

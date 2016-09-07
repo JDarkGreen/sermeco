@@ -74,16 +74,23 @@ function new_nav_menu_items( $items , $args ) {
 	#$current_url  = home_url(add_query_arg( array(),$wp->request) );
 	#$active_class = $current_url.'/' === home_url( '/' ) ? 'active' : '';
 
-	$active_class = is_home() ? 'active' : '';
+  $homelink = '';
 
-    $homelink = '<li class="home '.$active_class.'">';
-    $homelink .= '<a href="'.home_url( '/' ) . '">';
-    $homelink .= '<i class="fa fa-home" aria-hidden="true"></i>';
-    $homelink .= '</a></li>';
+    if( $args->theme_location === 'main-menu' ) :
+      
+      $active_class = is_home() ? 'active' : '';
+    
+      $homelink = '<li class="home '.$active_class.'">';
+      $homelink .= '<a href="'.home_url( '/' ) . '">';
+      $homelink .= '<i class="fa fa-home" aria-hidden="true"></i>';
+      $homelink .= '</a></li>';
 
+    endif;
+    
     $items = $homelink . $items;
 
     return $items;
+
 }
 
 add_filter( 'wp_nav_menu_items', 'new_nav_menu_items', 10, 2 );
@@ -146,6 +153,12 @@ function add_query_vars_filter( $vars ){
   return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
+
+/**********************************************************************************************/
+/* Nuevas Funciones del tema personalizadas  */
+/**********************************************************************************************/
+
+require_once('functiones/custom_featured_functions.php');
 
 
 ?>

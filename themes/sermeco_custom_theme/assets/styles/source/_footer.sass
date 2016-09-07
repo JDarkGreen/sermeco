@@ -4,106 +4,24 @@
 
 //SECCIÓN
 .mainFooter
-	color  : white
-	margin : 30px auto 0
+	border-top: 1px solid #DFDFDF
+	padding   : 22px 0
 
-/** [ SECCIÓN DE CONTENIDO ] **/
-#mainFooter-section-content
-	background     : url("../../images/backgrounds/footer_cingetec_ingenieria_tecnologia_construccion_fondo.jpg") no-repeat
-	background-size: cover 
-	padding        : 30px 0
-
-//
-.mainFooter__content
-	display: table 
-	width  : 100% 
-
-
-/* Item de Footer contiene informaciones */
-.mainFooter__item
-	border-right: 1px solid white 
-	display     : table-cell 
-	height      : auto 
-	padding     : 0 44px 
-	width       : 33%
-
-	//Variacion con no border
-	&.no-border
-		border-right: none !important
-
-	//Titulos
-	h3.title
-		border-left: 4px solid #A3CA38
-		display    : inline-block
-		font-size  : 18px
-		font-weight: bold	
-		line-height: 1em  
-		margin     : 0 auto 17px
-		padding    : 0 0 0 15px 
-
-
-/** [ LISTA DE DATOS ] **/
-ul.mainFooter__list-data
-	list-style-type: none 
-	margin         : 0 
-	padding        : 0 0 0 40px
-	li 
-		font-size: 15px
-		margin   : 0 auto 8px
-		//Div inline 
-		.container-inline 
-			display: inline-block
-		i	
-			color         : white  
-			display       : inline-block
-			font-size     : 20px
-			height        : 20px
-			margin        : 0 15px 0 -39px
-			text-align    : center 
-			vertical-align: top
-			width         : 20px 
-
-	/** [ VARIACION PÁGINA DE CONTACTO ] **/
-	&.page-contact-menu-data
+	/**[ Menu de Footer ]**/
+	ul, ul.menu-footer
+		list-style-type: none 
+		margin         : 0
 		li 
-			margin: 0 auto 28px
-			//Texto destacado
-			span.text-featured
-				color : #0070B8
-			i 
-				color : #0070B8
-
-/* Redes Sociales */
-ul.mainFooter__social-data
-	list-style-type: none
-	margin         : 23px 0 
-	padding        : 0 
-	li 
-		display: inline-block
-		padding: 0 7px 
-		a 
-			color          : white 
-			display        : block
-			font-size      : 25px  
-			text-decoration: none
-			//Hover
-			&:hover 
-				+animation( expand 1.2s ease-in-out infinite )
-
-	/** [ VARIACION PÁGINA DE CONTACTO ] **/
-	&.page-contact-social-links
-		li 
-			a 
-				color : #0070B8
-
-//Variacion texto destacado
-.text-featured
-	color: #A3CA38
-
-/** [ CÓDIGO QR ] **/
-#code-qr
-	margin   : 0 auto 
-	max-width: 130px 
+			border-right: 1px solid #d3d3d3
+			display     : inline-block
+			a 	
+				color    : #006492
+				display  : block
+				font-size: 14px
+				padding  : 0 30px
+			//Ultimo elemento de la fila
+			&:last-child
+				border: none 
 
 /** Copyright **/
 .text-copyright
