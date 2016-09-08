@@ -20,7 +20,7 @@
 ?>
 
 <!-- Wrapper de Contenido / Contenedor Layout -->
-<div class="pageWrapperLayout pageNosotros">
+<div class="pageWrapperLayout pageWrapperLayout--padding pageNosotros">
 
 	<div class="row">
 		

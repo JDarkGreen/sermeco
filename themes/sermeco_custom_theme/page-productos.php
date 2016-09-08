@@ -17,7 +17,7 @@
 ?>
 
 <!-- Wrapper de Contenido / Contenedor Layout -->
-<div class="pageWrapperLayout pageProductos">
+<div class="pageWrapperLayout pageWrapperLayout--padding pageProductos">
 
 	<?php  
 		#Extraer Breadcrumbs

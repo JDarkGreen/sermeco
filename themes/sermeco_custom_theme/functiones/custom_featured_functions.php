@@ -83,35 +83,46 @@ function custom_breadcrumbs()
         <a href="<?= site_url(); ?>"> <?= $home_title; ?> » </a>
 
         <?php 
-            if( $post->post_parent ):
 
-                $parent_id = $post->post_parent;
+            /** Si se trata de una página **/
+            if( is_page( $post->ID ) ) :
 
-                #echo $parent_id;exit; 
+                if( $post->post_parent ):
 
-                while( $parent_id ):
+                    $parent_id = $post->post_parent;
 
-                    $page = get_page( $parent_id );
+                    while( $parent_id ):
+
+                        $page = get_page( $parent_id );
+                        
+                        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a> » ';
+
+                        $parent_id = $page->post_parent;
                     
-                    $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a> » ';
+                    endwhile;
+     
+                    $breadcrumbs   = array_reverse($breadcrumbs);
+                    $breadcrumbs[] = '<span>'. $post->post_title .'</span>';
 
-                    $parent_id = $page->post_parent;
-                
-                endwhile;
- 
-                $breadcrumbs   = array_reverse($breadcrumbs);
-                $breadcrumbs[] = '<span>'. $post->post_title .'</span>';
+                    foreach($breadcrumbs as $crumb):
+                        echo $crumb;
+                    endforeach;
 
-                foreach($breadcrumbs as $crumb):
-                    echo $crumb;
-                endforeach;
+                else:
+                    echo '<span>'. $post->post_title .'</span>';
+                endif;
+            endif;
 
-            else: 
+            /** Si se trata de un single custom post type **/
+            if( is_single( $post->ID ) ) :
 
-                #Si es elemento padre
-                echo '<span>'. $post->post_title .'</span>';
+                $the_post_type = get_post_type_object( get_post_type( $post->ID ) );
+
+                echo '<span>'. $the_post_type->labels->singular_name .'</span> » ';    
+                echo '<span>'. $post->post_title .'</span>';    
 
             endif;
+            
         ?>
 
     </div>
