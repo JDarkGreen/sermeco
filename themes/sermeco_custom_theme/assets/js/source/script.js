@@ -99,6 +99,21 @@ var j = jQuery.noConflict();
 		});
 
 
+		/*|----------------------------------------------------------------------|*/
+		/*|-----  FANCYBOX GALERIAS   -----|*/
+		/*|----------------------------------------------------------------------|*/
+
+		j("a.gallery-fancybox").fancybox({
+			'overlayShow': false,
+			'openEffect' : 'elastic',
+			'closeEffect': 'elastic',
+			'openSpeed'  : 300,
+			'closeSpeed' : 300,
+		});
+
+
+
+
 	/*|- end of document -|*/
 	});
 

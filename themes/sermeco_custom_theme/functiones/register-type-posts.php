@@ -105,6 +105,31 @@ function create_post_type(){
 		'menu_icon'   => 'dashicons-groups',
 	);
 
+	/*|----- PRODUCTOS ----------------------|*/
+	
+	$labels_products = array(
+		'name'               => __('Productos'),
+		'singular_name'      => __('Producto'),
+		'add_new'            => __('Nuevo Producto'),
+		'add_new_item'       => __('Agregar nuevo Producto'),
+		'edit_item'          => __('Editar Producto'),
+		'view_item'          => __('Ver Producto'),
+		'search_items'       => __('Buscar Productos'),
+		'not_found'          => __('Producto no encontrado'),
+		'not_found_in_trash' => __('Producto no encontrado en la papelera'),
+	);
+
+	$args_products = array(
+		'labels'      => $labels_products,
+		'has_archive' => true,
+		'public'      => true,
+		'hierachical' => false,
+		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes' ),
+		'show_ui' => true,
+		'taxonomies'  => array( 'post_tag' ),
+		'menu_icon'   => 'dashicons-cart',
+	);
+
 
 	/*|REGISTRAR|*/
 	
@@ -119,6 +144,9 @@ function create_post_type(){
 
 	#GALERIA CLIENTES
 	register_post_type( 'theme-gal-clients' , $args_clients );
+
+	#PRODUCTOS
+	register_post_type( 'theme-products' , $args_products );
 
 
 

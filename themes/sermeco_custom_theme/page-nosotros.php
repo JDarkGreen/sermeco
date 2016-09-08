@@ -52,12 +52,10 @@
 		<div class="col-xs-12 col-sm-9">
 
 			<!-- Breadcrumbs -->
-			<?php  
-				custom_breadcrumbs();
-			?>
+			<?php custom_breadcrumbs(); ?>
 
 			<!-- Título de la Página -->
-			<h2 class="text-capitalize">
+			<h2 class="titleCommon__page text-capitalize">
 				<?= __( $post->post_title , "LANG" ); ?>
 			</h2>
 
