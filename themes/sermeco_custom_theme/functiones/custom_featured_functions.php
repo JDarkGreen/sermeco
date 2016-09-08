@@ -65,20 +65,62 @@ add_filter( 'gallery_current_post', 'get_items_gallery' );
 /** Funcion que retorna los breadcrumbs o migas de pan. **/
 function custom_breadcrumbs() 
 {
-       
+    global $post;
+
     // Settings
     $separator          = '&gt;';
     $breadcrums_id      = 'breadcrumbs';
     $breadcrums_class   = 'breadcrumbs';
     $home_title         = 'Home';
 
-    $echo = '<ul class="'.$breadcrumbs.'">';
+    $breadcrumbs        = array();
+
+    ob_start();
+?>
+
+    <div class="<?= $breadcrums_class; ?>">
     
-    	$echo = '<li><a>' . $home_title . '</a><li>';
+        <a href="<?= site_url(); ?>"> <?= $home_title; ?> » </a>
 
-    $echo .= '</ul>';
+        <?php 
+            if( $post->post_parent ):
 
+                $parent_id = $post->post_parent;
 
+                #echo $parent_id;exit; 
+
+                while( $parent_id ):
+
+                    $page = get_page( $parent_id );
+                    
+                    $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a> » ';
+
+                    $parent_id = $page->post_parent;
+                
+                endwhile;
+ 
+                $breadcrumbs   = array_reverse($breadcrumbs);
+                $breadcrumbs[] = '<span>'. $post->post_title .'</span>';
+
+                foreach($breadcrumbs as $crumb):
+                    echo $crumb;
+                endforeach;
+
+            else: 
+
+                #Si es elemento padre
+                echo '<span>'. $post->post_title .'</span>';
+
+            endif;
+        ?>
+
+    </div>
+
+<?php
+
+    $all_breadcrums = ob_get_contents(); ob_clean();
+    echo $all_breadcrums; 
+    
 }
 
 

@@ -303,35 +303,38 @@ img.aligncenter, img.alignright, img.alignleft
 /**-- 1.10 SIDEBAR COMÚN -------------------------------------------------------------**/
 /***************************************************************************************/
 
-/** [ SIDEBAR CATEGORIAS ] **/
+/** [ SIDEBAR ] **/
+.sidebarCommon
+	padding : 40px 0 0 
+	ul 
+		list-style-type: none 
+		margin         : 0
+		padding        : 0 
+		li 
+			a 
+				+transition( all 600ms ease-in-out )
+				border-bottom  : 1px solid silver 	
+				color          : #555555 
+				display        : block 
+				font-size      : 13px 
+				padding        : 6px 10px
+				position       : relative
+				text-decoration: none 
 
-//link padre
-a.linktoParentProduct
-	background     : #A70008
-	color          : white 
-	font-weight    : 600 
-	line-height    : 1 
-	padding        : 8px 19px 
-	text-decoration: none 
+				//after 
+				&:after 
+					content    : "\203A"
+					font-size  : 25px
+					line-height: 1
+					margin     : -12px 0 0
+					position   : absolute
+					right      : 10px
+					top        : 50%
 
-//Lista de subcategorias
-ul.menuCategoryProducts
-	background     : #EDEEF0
-	list-style-type: none 
-	margin         : 0
-	padding        : 19px 20px 13px
-	li 
-		a 
-			+transition( all 500ms ease-in-out )
-			color          : #656369
-			display        : block
-			margin         : 0 auto 6px
-			text-decoration: none 
-			font-weight    : 600 
-			//Hover 
-			&:hover 
-				color : black
-		
+				//Hover
+				&:hover , &.active
+					background: #5D7683
+					color     : white 
 
 /***************************************************************************************/
 /**-- 1.11 PREVIEW BLOG DE POST ------------------------------------------------------**/
@@ -461,4 +464,18 @@ ul.menuCategoryProducts
 
 .sectionCommon__clients
 	padding : 48px 0
+
+
+/***************************************************************************************/
+/**-- 1.20 BREADCRUMBS   -------------------------------------------------------------**/
+/***************************************************************************************/
+
+.breadcrumbs
+	font-size: 13px
+	margin   : 0 auto 10px
+	a 
+		color          : #006B95
+		text-decoration: none 
+	span 
+		color : #555555
 
