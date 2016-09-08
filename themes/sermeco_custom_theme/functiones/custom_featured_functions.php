@@ -67,6 +67,8 @@ function custom_breadcrumbs()
 {
     global $post;
 
+    $object = get_queried_object();
+
     // Settings
     $separator          = '&gt;';
     $breadcrums_id      = 'breadcrumbs';
@@ -120,6 +122,15 @@ function custom_breadcrumbs()
 
                 echo '<span>'. $the_post_type->labels->singular_name .'</span> » ';    
                 echo '<span>'. $post->post_title .'</span>';    
+
+            endif;
+
+            /** Si se trata de categorias **/
+            if( is_category( $object->term_id ) ):
+
+                $category = get_category($object->term_id );
+
+                echo '<span>'.  $category->name .'</span>';    
 
             endif;
             

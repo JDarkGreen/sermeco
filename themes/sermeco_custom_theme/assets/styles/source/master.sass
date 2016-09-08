@@ -280,6 +280,58 @@ body.admin-bar
 		font-size: 15px
 
 
+/***************************************************************************************/
+/**--  PAGINA BLOG -------------------------------------------------------------------**/
+/***************************************************************************************/
+
+/**[ PÁGINA PREVIEW DE BLOG ]**/
+.itemPreview__blog
+	display  : inline-block 
+	margin   : 0 25px 40px 0
+	max-width: 293px 
+	width    : 100%
+
+	//Imágen 
+	figure 
+		margin  : 0 auto 15px 
+		overflow: hidden
+		img 
+			+transition( all 1.2s cubic-bezier(.5,.5,.5,1) )
+		//Hover
+		&:hover 
+			img 
+				+scale( 1.2 )
+	
+	//Titulo
+	h2.text-title
+		color      : #00628D
+		font-size  : 20px 
+		font-weight: 700
+		height     : 65px 
+		overflow   : hidden
+
+	//Excerpt
+	.text-excerpt
+		color    : #555555
+		font-size: 15px 
+		height   : 170px
+
+/**[ SINGLE POST ]**/
+.itemSingleBlog
+	
+	//Fecha
+	span.post-date
+		color    : #555555
+		display  : block 
+		font-size: 13px 
+		margin   : 0 auto 10px 
+
+	//Título del Post
+	.titlePost
+		color      : #00628D
+		font-family: "Roboto" , sans-serif
+		font-weight: 600 
+		margin     : 0 auto 20px
 
 
 /***************************************************************************************/
