@@ -130,6 +130,31 @@ function create_post_type(){
 		'menu_icon'   => 'dashicons-cart',
 	);
 
+	/*|----- PROYECTOS ----------------------|*/
+	
+	$labels_projects = array(
+		'name'               => __('Proyectos'),
+		'singular_name'      => __('Proyecto'),
+		'add_new'            => __('Nuevo Proyecto'),
+		'add_new_item'       => __('Agregar nuevo Proyecto'),
+		'edit_item'          => __('Editar Proyecto'),
+		'view_item'          => __('Ver Proyecto'),
+		'search_items'       => __('Buscar Proyectos'),
+		'not_found'          => __('Proyecto no encontrado'),
+		'not_found_in_trash' => __('Proyecto no encontrado en la papelera'),
+	);
+
+	$args_projects = array(
+		'labels'      => $labels_projects,
+		'has_archive' => true,
+		'public'      => true,
+		'hierachical' => false,
+		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes' ),
+		'show_ui' => true,
+		'taxonomies'  => array( 'post_tag' ),
+		'menu_icon'   => 'dashicons-portfolio',
+	);
+
 
 	/*|REGISTRAR|*/
 	
@@ -147,6 +172,9 @@ function create_post_type(){
 
 	#PRODUCTOS
 	register_post_type( 'theme-products' , $args_products );
+
+	#PROYECTOS
+	register_post_type( 'theme-projects' , $args_projects );
 
 
 

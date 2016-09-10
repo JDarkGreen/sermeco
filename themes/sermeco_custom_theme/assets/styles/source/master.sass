@@ -108,7 +108,7 @@ body.admin-bar
 //Contenedor Layout 
 .pageWrapperLayout
 	margin   : 0 auto 
-	max-width: 960px
+	max-width: 1000px
 	width    : 100%
 //Con padding 
 .pageWrapperLayout--padding
@@ -333,6 +333,54 @@ body.admin-bar
 		font-weight: 600 
 		margin     : 0 auto 20px
 
+
+/***************************************************************************************/
+/**--  PAGINA PROJECTOS -------------------------------------------------------------------**/
+/***************************************************************************************/
+
+/**[ Item Single Project ]**/
+.itemProject
+	border : 2px solid #EAEAEA
+	margin : 0 10px 20px
+	padding: 23px 
+	width  : 31.2%
+
+	//Imágen
+	figure 
+		margin: 0 auto 8px
+	//Título
+	h2 
+		+transition( all 500ms ease-in-out )
+		align-items    : center 
+		background     : #585858
+		color          : white
+		display        : flex 
+		font-size      : 18px
+		font-weight    : 600 
+		height         : 70px
+		justify-content: center 
+		margin         : 0 auto 35px 
+		padding        : 8px 
+	
+	//Extradata
+	ul.list-extradata-project
+		list-style-type: none 
+		margin         : 0 auto 35px
+		padding        : 0 0 0 90px
+		li 
+			color    : #555555
+			font-size: 13px 
+			span 
+				display    : inline-block
+				font-weight: 600
+				margin     : 0 0 0 -97px
+				text-align : right
+				width      : 90px
+
+	//Hover Projecto 
+	&:hover 
+		h2 
+			background: #0073C3
 
 /***************************************************************************************/
 /**--  MAIN FOOTER  ------------------------------------------------------------------**/
