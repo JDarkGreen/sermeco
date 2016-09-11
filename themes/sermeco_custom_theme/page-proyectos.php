@@ -105,13 +105,26 @@
 				</ul> <!-- /.list-extradata-project -->
 
 				<!-- ExtraImages -->
-				<ul class="list-extraimages-project">
+				<div class="list-extraimages-project">
 					<?php  
+						//Extraer y las imágenes mostrarlas de la galería
 						$current_project_gallery = get_items_gallery( get_the_ID() );
 
-						var_dump($current_project_gallery);
+						foreach( $current_project_gallery as $image ):
+						
+						#Url de imágen 
+						$url_image = $image->guid;
+						#Título 
+						$title_image = $image->post_content;
 					?>
-				</ul> <!-- /.list-extraimages-project -->
+						<a href="<?= $url_image; ?>" class="gallery-fancybox" rel="group-<?= get_the_ID(); ?>">
+							<img src="<?= $url_image; ?>" alt="<?= $title_image; ?>" class="img-fluid d-block m-x-auto" />
+						</a> <!-- /. -->
+
+					<?php endforeach; ?>
+
+
+				</div> <!-- /.list-extraimages-project -->
  				
 			</article> <!-- /.itemProject -->
 

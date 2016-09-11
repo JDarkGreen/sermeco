@@ -173,7 +173,7 @@ function custom_address_render()
 { 
 	$options = get_option( 'theme_settings' ); 
 	?>
-	<textarea name="theme_settings[theme_address_text]" id="" style="width:350px;height:120px;max-height:120px;"><?= !empty($options['theme_address_text']) ? $options['theme_address_text'] : "" ; ?> </textarea>
+	<textarea name="theme_settings[theme_address_text]" id="" style="width:550px;height:120px;max-height:120px;"><?= !empty($options['theme_address_text']) ? $options['theme_address_text'] : "" ; ?> </textarea>
 	<?php
 }
 
