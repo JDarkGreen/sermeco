@@ -12,9 +12,14 @@
 	.pageWrapperLayout
 		padding: 0 15px
 
+	//Sidebar Mobile
+	.sidebarMobile
+		padding: 10px
+
 	//********************************
 	//* HEADER
 	//********************************
+
 	.mainHeader
 		background : white
 		display    : flex
@@ -31,62 +36,81 @@
 		//Logo
 		.logo 
 			max-width: inherit
-			width    : 65%
+			margin   : 0 10px 
+
+
+	//NAVIGATION
+	nav.mainNavigation 
+		ul.main-menu 
+			li
+				display: block
+				width  : 100% 
+				a 
+					border: none
 
 	//********************************
 	//* SECCIONES COMUNES
 	//********************************
+	
 
-	//BANNERS DE SERVICIO
-	.sectionCommon__banner__services 
-		h2
-			font-size: 25px 
-			margin   : 0 auto 10px 
-
-	//********************************
-	//* CAROUSELES
-	//********************************
-
-	//Proyectos
-	#carousel-proyectos-preview
-		padding: 0 10px
-
-	//********************************
-	//* PAGINA INICIO
-	//********************************
-	.pageInicio__proyectos 
-		background-attachment: initial
-		.text-presentation
-			padding: 0
+	/**[Carousel Clientes]**/
+	.sectionCommon__clients
+		padding : 20px 0
 
 
 	//********************************
-	//* BLOG
-	//********************************
+	//* PÁGINA INICIO
+	//********************************	
+	
+	//Slider Home
+	#slider-home 
+		figure.image-featured
+			background-position: top left 
+			background-size    : cover 
+			height             : 310px
+		//Contenido
+		.slider-content 
+			padding: 0 10px
+			bottom : 25%
+			h2 , span 
+				font-size: 20px
 
-	//Preview de articulo
-	.itemArticle__preview 
-		figure 
-			margin: 0 auto 10px
-			width : 100%
-			a
-				width          : 100%
-				background-size: cover
+	/********************************
+	//* PÁGINA INICIO
+	//*******************************/
+	.pageNosotros 
+		figure.featured-image
+			max-width: initial
 
-		.content-text
+	/********************************
+	//* PÁGINA PRODUCTO
+	//*******************************/
+	.itemProduct
+		width: auto 
+
+	/********************************
+	//* PÁGINA PROYECTO
+	//*******************************/
+	.itemProject
+		margin: 0 0 10px 
+		width : auto 
+
+	/********************************
+	//* PÁGINA CONTACTO
+	//*******************************/
+	.pageContacto__form
+		padding: 20px 10px
+
+	.pageContacto__form__group 
+		label , input , textarea
 			width: 100%
 
 
-
-
 	//********************************
-	//* FOOTER
-	//********************************
-
-	//Item Footer
-	.mainFooter__item 
-		border : none 
-		display: block
-		margin : 0 auto 15px 
-		width  : 100%
-		padding: 0
+	//* FOOTER 
+	//********************************/
+	.mainFooter
+		height: 180px
+		ul , ul.menu-footer
+			padding: 0 
+			

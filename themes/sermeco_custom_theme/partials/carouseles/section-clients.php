@@ -28,7 +28,7 @@
 		?>
 
 		<!-- Carousel Galeria de Clientes -->
-		<div id="carousel-clients" class="section__single_gallery js-carousel-gallery" data-items="6" data-items-responsive="1" data-margins="50" data-dots="true" data-autoplay="true">
+		<div id="carousel-clients" class="section__single_gallery js-carousel-gallery" data-items="6" data-items-responsive="2" data-margins="50" data-dots="true" data-autoplay="true">
 		
 			<?php foreach( $mb_gallery_clients as $item_gallery ): ?>
 

@@ -57,8 +57,6 @@
 			<!-- Breadcrumbs -->
 			<?php custom_breadcrumbs(); ?>
 
-			<!-- Espacios --> <br/><br/>
-
 			<!-- Título de la Página -->
 			<h2 class="titleCommon__page text-capitalize">
 				<?= __( $post->post_title , "LANG" ); ?>

@@ -60,7 +60,7 @@
 
 	$mail->IsHTML(true); // send as HTML
 
-	$mail->Subject = "Mensaje Web Formulario:";
+	$mail->Subject = "Formulario Web: Sermeco";
 
 	//Adjuntar Logo Imagen
 	$mail->AddEmbeddedImage("images\logo.png", "logo", "logo.png");

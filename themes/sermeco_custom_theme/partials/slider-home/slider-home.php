@@ -29,8 +29,17 @@
 		<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			
 			<div>
+
+				<?php  
+					#Imágen Destacada
+					$featued_img = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
+				?>
 				
-				<?= get_the_post_thumbnail( get_the_ID() , 'full' , array('class'=>'img-fluid d-block m-x-auto') ); ?>
+				<figure class="image-featured" style="background-image: url( <?= $featued_img; ?> )">
+
+					<?= get_the_post_thumbnail( get_the_ID() , 'full' , array('class'=>'img-fluid d-block m-x-auto hidden-xs-down') ); ?>
+				</figure>
+
 
 				<!-- Información -->
 				<div class="slider-content">
