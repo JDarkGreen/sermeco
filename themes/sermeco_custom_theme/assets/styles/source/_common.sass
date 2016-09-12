@@ -362,7 +362,8 @@ img.aligncenter, img.alignright, img.alignleft
 		text-decoration: none 
 		//HOVER AND ACTIVE 
 		&:hover , &.active 
-			background: #006B95
+			background: #065BA0
+			color     : white 
 
 
 /***************************************************************************************/
@@ -424,7 +425,40 @@ img.aligncenter, img.alignright, img.alignleft
 /**-- 1.18 SECCIÓN FACEBOOK  --------------------------------**/
 /***************************************************************************************/
 
-//.container__facebook
+.sectionContentFacebook
+	background: #F2F2F2
+	display   : block 
+	padding   : 40px 0
+	//span 
+	span 
+		color      : silver
+		display    : block
+		font-size  : 18px
+		font-weight: bold
+		margin     : 0 auto 24px 
+	//Ícono
+	.icon-facebook
+		+border-radius( 50% )
+		+box-shadow( 0 0 0 4px transparent )
+		align-items    : center 
+		background     : #DCDCDC 
+		border         : 3px solid transparent 
+		color          : white 
+		display        : flex
+		height         : 73px 
+		justify-content: center 
+		text-decoration: none 
+		width          : 73px
+		+transition( all 200ms cubic-bezier(.5,.5,.5,1) )
+		//
+		i 
+			font-size: 40px
+		//Hover icon
+		&:hover 
+			+box-shadow( 0 0 0 4px #3B5998 )
+			background: #3B5998
+			border    : 3px solid white 
+
 
 
 /***************************************************************************************/
@@ -440,8 +474,10 @@ img.aligncenter, img.alignright, img.alignleft
 /***************************************************************************************/
 
 .breadcrumbs
-	font-size: 13px
-	margin   : 0 auto 10px
+	border-bottom: 1px solid rgba(0,0,0,.1)
+	font-size    : 13px
+	margin       : 0 auto 10px
+	padding      : 0 0 10px 
 	a 
 		color          : #006B95
 		text-decoration: none 

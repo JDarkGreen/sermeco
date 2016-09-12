@@ -31,19 +31,10 @@
 					?>
 				</div> <!-- /.content-presentation -->
 
-				<br><br>
-
-				<!-- Facebook -->
-				<div class="content-facebook text-xs-center m-x-auto">
-					<span> <?= __("Síguenos en:" , "LANG" ); ?></span>
-					
-					<!-- Icono -->
-					<a href="<?= LINK_FACEBOOK ?>" target="_blank" class="icon-facebook m-x-auto">
-						<i class="fa fa-facebook" aria-hidden="true"></i>
-					</a> <!-- /. -->
-				
-				</div> <!-- /.content-facebook -->
-
+				<?php  
+					#Incluir plantilla de facebook
+					include( locate_template('partials/social/section-facebook.php') );
+				?>
 				
 			</div> <!-- /.col-xs-12 col-sm-9 -->		
 	

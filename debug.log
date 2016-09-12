@@ -1,0 +1,4 @@
+[12-Sep-2016 14:57:50 UTC] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\sermeco\wp-content\themes\sermeco_custom_theme\partials\carouseles\section-clients.php on line 22
+[12-Sep-2016 14:57:50 UTC] PHP Notice:  Trying to get property of non-object in C:\xampp\htdocs\sermeco\wp-content\themes\sermeco_custom_theme\partials\carouseles\section-clients.php on line 25
+[12-Sep-2016 14:58:00 UTC] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\sermeco\wp-content\themes\sermeco_custom_theme\partials\carouseles\section-clients.php on line 22
+[12-Sep-2016 14:58:00 UTC] PHP Notice:  Trying to get property of non-object in C:\xampp\htdocs\sermeco\wp-content\themes\sermeco_custom_theme\partials\carouseles\section-clients.php on line 25

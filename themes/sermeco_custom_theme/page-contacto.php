@@ -89,7 +89,7 @@
 					<textarea name="input_message" id="input_message" placeholder="<?php _e( 'Su Mensaje', LANG ); ?>" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Necesitas más de 20 caracteres" data-parsley-validation-threshold="10"></textarea>
 				</div> <!-- /.pageContacto__form__group -->
 
-				<button type="submit" id="send-form" class="btnCommon__show-more text-uppercase pull-xs-right">
+				<button type="submit" id="send-form" class="btnSendEmail text-uppercase pull-xs-right">
 					<?php _e( 'enviar' , LANG ); ?>
 				</button> <!-- /.btn__send-form -->
 
@@ -102,6 +102,91 @@
 	</div> <!-- /.row -->
 
 </div> <!-- /.pageWrapperLayout -->
+
+<!-- Mapa -->
+<section class="pageContacto__map">
+	<?php if( ( isset($options['theme_lat_coord']) and !empty($options['theme_lat_coord']) ) && ( isset($options['theme_long_coord']) and !empty($options['theme_long_coord']) ) ) : 
+	?>
+		<div id="canvas-map"></div>
+	<?php endif; ?>
+</section> <!-- /.pageContacto__map -->
+
+<?php  
+	#Incluir plantilla de facebook
+	include( locate_template('partials/social/section-facebook.php') );
+?>
+
+<!-- Script Google Mapa -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNMUy9phyQwIbQgX3VujkkoV26-LxjbG0"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<!-- Scripts Solo para esta plantilla -->
+<?php 
+	if( ( isset($options['theme_lat_coord']) and !empty($options['theme_lat_coord']) ) && ( isset($options['theme_long_coord']) and !empty($options['theme_long_coord']) ) ) : 
+
+	#Zoom de mapa
+	$zoom_mapa = isset( $options['theme_zoom_mapa'] ) && !empty( $options['theme_zoom_mapa'] ) ? $options['theme_zoom_mapa'] : 16;
+
+?>
+
+	<script type="text/javascript">	
+		<?php  
+			$lat = $options['theme_lat_coord'];
+			$lng = $options['theme_long_coord'];
+		?>
+	    var map;
+	    var lat = <?= $lat ?>;
+	    var lng = <?= $lng ?>;
+	    function initialize() {
+	      //crear mapa
+	      map = new google.maps.Map(document.getElementById('canvas-map'), {
+	        center: {lat: lat, lng: lng},
+	        zoom  : <?= $zoom_mapa; ?>,
+	      });
+	      //infowindow
+	      <?php  
+
+	      	/*****/
+	      	$default_markup = "Sermeco <br/>";
+	      	$default_markup .= "Calle Las tapadas 131 <br/>";
+	      	$default_markup .= "Rímac Lima - Perú";
+
+	      	if ( isset($options['theme_text_markup_map']) and !empty($options['theme_text_markup_map']) ) :
+	      		$contenido_markup = trim( $options['theme_text_markup_map'] );
+
+	      		$contenido_markup = !empty($contenido_markup) ? apply_filters("the_content" , $options['theme_text_markup_map']  ) : $default_markup;
+	      	else:
+
+	      		$contenido_markup = $default_markup;
+
+	      	endif;
+	      ?>
+
+	      var contenido_markup = <?= json_encode( $contenido_markup ) ?>;
+
+	      var infowindow  = new google.maps.InfoWindow({
+	        content: contenido_markup
+	      });
+	      //icono
+	      //var icono = "<?= IMAGES ?>/icon/contacto_icono_mapa.jpg";
+	      //crear marcador
+	      marker = new google.maps.Marker({
+	        map      : map,
+	        draggable: false,
+	        animation: google.maps.Animation.DROP,
+	        position : {lat: lat, lng: lng},
+	        title    : "<?php _e(bloginfo('name') , LANG )?>",
+	        //icon     : "<?= IMAGES . '/icon/icon_map.png' ?>",
+	      });
+	      //marker.addListener('click', toggleBounce);
+	      marker.addListener('click', function() {
+	        infowindow.open( map, marker);
+	      });
+	    }
+	    google.maps.event.addDomListener(window, "load", initialize);
+	</script>
+
+<?php endif; ?>
 
 <!-- Footer -->
 <?php get_footer(); ?>

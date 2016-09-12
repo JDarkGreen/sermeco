@@ -68,15 +68,24 @@ nav.mainNavigation
 				//Selected o active
 				&.active , &.current-menu-item , &.current_page_item , &.current-menu-this-item
 					background: #618fcc
+					a 
+						border: none 
 				//Only home 
 				&.home 
 					a 
-						padding: 0 20px 
+						border : none 
+						padding: 0 35px 
 						i 
 							font-size: 23px
+				//Ultimo elemento
+				&:last-child
+					a 
+						border: none
 				//Hover Li
 				&:hover 
 					background: #065BA0
 					+scale( 1.05 )
+					a 
+						border: none
 
 

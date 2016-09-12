@@ -54,8 +54,12 @@ function custom_theme_settings_init()
 	register_setting( 'customThemePageContactoMapa' , 'theme_settings' );
 	//panel rewrite url
 	register_setting( 'customThemeRewriteUrl' , 'theme_settings' );
+	
 	//panel proyectos
 	register_setting( 'customThemeProyects' , 'theme_settings' );
+
+	//panel cuentas
+	register_setting( 'customThemePageCuentas' , 'theme_settings' );
 
 	/**
 	* Incluir archivo de Configuracion de Secciones y campos , inputs y texarea
@@ -94,7 +98,10 @@ function custom_theme_options_page()
 
                 <li><a href="#"> <?= __("Personalización Footer" , LANG ); ?> </a></li>
 
-                <li><a href="#"> <?= __("Extra: Proyectos" , LANG ); ?> </a></li>
+                <?php /* <li><a href="#"> <?= __("Extra: Proyectos" , LANG ); ?> </a></li> */ ?>
+
+                <li style="background:red !important;"><a style="color: black !important;" href="#">
+                 <?= __("Personalización Cuentas" , LANG ); ?> </a></li>
 
             </ul> <!-- /. -->
 
@@ -165,10 +172,21 @@ function custom_theme_options_page()
                 </div> <!-- /.tabdemo__content-item -->
 
             	<!-- PANEL PROYECTOS EXTRA -->
+            	<?php /*
                 <div class="tabdemo__content-item">
                 	<?php
 						settings_fields( 'customThemeProyects' );
 						do_settings_sections( 'customThemeProyects' );
+						submit_button();
+					?>
+                </div> <!-- /.tabdemo__content-item -->
+                */ ?>
+
+                <!-- PANEL CUENTAS -->
+                <div class="tabdemo__content-item">
+                	<?php
+						settings_fields( 'customThemePageCuentas' );
+						do_settings_sections( 'customThemePageCuentas' );
 						submit_button();
 					?>
                 </div> <!-- /.tabdemo__content-item -->
