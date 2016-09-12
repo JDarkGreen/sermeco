@@ -5,10 +5,6 @@
 function load_custom_scripts()
 {
 
-	/*wp_deregister_script('jquery');
-   wp_register_script('jquery', "https://code.jquery.com/jquery-2.2.3.min.js", false, null);
-   wp_enqueue_script('jquery'); */
-
 	//cargar tether /
 	wp_enqueue_script('tether', THEMEROOT . '/assets/js/vendor/tether.min.js', array('jquery'), '1.1.0', true);
 
@@ -31,7 +27,8 @@ function load_custom_scripts()
 	wp_enqueue_script('parsley', THEMEROOT . '/assets/js/vendor/parsley.min.js', array('jquery'), '2.3.11', true);
 	wp_enqueue_script('p_idioma_es', THEMEROOT . '/assets/js/vendor/i18n/es.js', '' , false , true);
 
-	
+	/**[Cargar SlideBar]**/
+	wp_enqueue_script('wp-slidebar-js', THEMEROOT . '/assets/js/vendor/slidebars.min.js', array('jquery'), '2.0.2', true);
 
 	//custom script
 	wp_enqueue_script('custom_script', THEMEROOT . '/assets/js/source/script.js', array('jquery'), '1.0' , true );

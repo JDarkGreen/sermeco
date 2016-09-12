@@ -153,6 +153,12 @@
 	</section> <!-- /.sectionPagination -->
 
 	<?php endif; wp_reset_postdata(); ?>
+
+	<!-- COMPARTIR PARTIAL -->
+	<?php 
+		$current_share = get_permalink( $post->ID );
+		include( locate_template('partials/social/share-post.php') );
+	?>
 		
 	
 

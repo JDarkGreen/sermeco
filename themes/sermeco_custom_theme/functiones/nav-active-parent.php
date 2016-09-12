@@ -39,7 +39,7 @@ pertenece la pagina actual a un custom post type */
 
 
 		//Si el tipo de post es post y está en la página de articulos activar este item
-		if( get_post_type( $post_id ) === "post" && ( strpos($menu_slug,"blog") !== false ) )
+		if( !is_home() && get_post_type( $post_id ) === "post" && ( strpos($menu_slug,"blog") !== false ) )
 		{
 			$classes[] = 'current-menu-this-item';
 		}

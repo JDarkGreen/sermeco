@@ -1,9 +1,45 @@
 var j = jQuery.noConflict();
 
+/**
+* Funcion de Condicionar ancho de navegador
+**/
+
+function getWidthBrowser()
+{
+	return j(window).width();
+}
+
+
+
+
 (function($){
 /*|----------------------------------------------------------------------|*/
 
 	j(document).on('ready',function(){
+
+		
+		/*|----------------------------------------------------------------------|*/
+		/*|-----  SLIDEBAR MENU NAVEGACION RESPONSIVE -----|*/
+		/*|----------------------------------------------------------------------|*/
+
+		// Initialize Slidebars
+		var controller = new slidebars();
+		controller.init();
+
+		//Eventos
+
+		//Abrir contenedores
+		j(".js-toggle-mobile-nav").on( 'click', function ( event ) {
+		  // Stop default action and bubbling
+		  event.stopPropagation();
+		  event.preventDefault();
+
+		  //Su contenedor id 
+		  var id_container = this.getAttribute('data-id');
+
+		  // Toggle the Slidebar with id 
+		  controller.toggle( id_container );
+		});
 
 		/*|----------------------------------------------------------------------|*/
 		/*|-----  CAROUSEL HOME  LIBRERIA OWL CAROUSEL -----|*/

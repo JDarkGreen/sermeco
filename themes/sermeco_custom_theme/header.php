@@ -45,64 +45,121 @@
 	$logo_theme = isset($options['theme_meta_logo_text']) && !empty($options['theme_meta_logo_text']) ? $options['theme_meta_logo_text'] : IMAGES . '/logo.jpg';
 ?>
 
-<!-- Contenedor Versión Desktop -->
-<header class="mainHeader hidden-xs-down <?= $admin_bar; ?>">
 
-	<!-- Layout wrapper -->
-	<div class="pageWrapperLayout">
+<?php 
+	$w_browser = '<script>document.write(window.outerWidth); </script>'; 
+	$w_browser = intval( $w_browser );
+?>
 
-		<div class="row">
+<?php if( $w_browser <= 640  ) : ?>
+	
+	<!-- Menu lateral Izquierda -->
+	<div off-canvas="id-container-menu left reveal">
+		asdasdasdasd
+	</div>	
+
+
+	<!-- Menu lateral Derecha -->
+	<div off-canvas="id-container-post right shift">
+		derecha
+	</div>
+
+<?php endif; ?>
+
+
+
+<!-- Contenedor Versión Mobile -->
+<header class="mainHeader hidden-sm-up <?= $admin_bar; ?>" canvas="">
+	<!-- Icono abrir menu lateral -->
+	<div class="icon-header">
+		<i class="js-toggle-mobile-nav fa fa-bars" data-id="id-container-menu" aria-hidden="true"></i>
+	</div><!-- /.icon-header -->
+
+	<!-- Logo -->
+	<h1 class="logo">
+		<a href="<?= site_url() ?>">
+			<img src="<?= IMAGES ?>/logo.jpg" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
+		</a>
+	</h1> <!-- /.lgoo -->	
+
+	<!-- Icono abrir menu lateral derecha -->
+	<div class="icon-header">
+		<i class="js-toggle-mobile-nav fa fa-bars" data-id="id-container-post" aria-hidden="true"></i>
+	</div><!-- /.icon-header -->	
+
+</header> <!-- /.mainHeader hidden-sm-up-->
+
+
+<!-- Contenedor canvas wrapper para slider mobile -->
+<div canvas="container">
+
+	<!-- Contenedor Versión Desktop -->
+	<header class="mainHeader hidden-xs-down <?= $admin_bar; ?>">
+
+		<!-- Layout wrapper -->
+		<div class="pageWrapperLayout">
+
+			<div class="row">
+				
+				<div class="col-xs-6">
+					
+					<!-- Logo -->
+					<h1 class="logo">
+						<a href="<?= site_url(); ?>" class="center-block">
+							<img src="<?= $logo_theme; ?>" alt="portada-cueros-web" class="img-fluid" />
+						</a>
+					</h1> <!-- /.logo -->
+
+				</div> <!-- /.col-xs-6 -->
+
+				<div class="col-xs-6 text-xs-right">
+
+					<!-- Header Data -->
+					<span class="mainHeader__slogan">
+						<!-- Icono --> 
+						<i>
+							<img src="<?= IMAGES ?>/icons/icon_header.png" alt="sermeco-pagina" class="img-fluid" />
+						</i>
+						<?= __("Estás en Sermeco SAC" , "LANG"); ?>
+					</span>
+
+					<!-- Header Links -->
+					<ul class="mainHeader__links">
+						<li>
+							<a href="<?= site_url(); ?>">Inicio</a>
+						</li>
+						<li>
+							<?php  
+								$page_contacto = get_page_by_title('contactenos');
+							?>
+							<a href="<?= get_permalink( $page_contacto->ID ); ?>">Contáctanos</a>
+						</li>
+					</ul> <!-- /.mainHeader__links -->
+					
+				</div> <!-- /.col-xs-6 -->
+
+			</div> 	<!-- /.row -->
 			
-			<div class="col-xs-6">
-				
-				<!-- Logo -->
-				<h1 class="logo">
-					<a href="<?= site_url(); ?>" class="center-block">
-						<img src="<?= $logo_theme; ?>" alt="portada-cueros-web" class="img-fluid" />
-					</a>
-				</h1> <!-- /.logo -->
+			<!-- Menú de Navegación -->
+			<nav class="mainNavigation">
+				<?php 
+					wp_nav_menu(
+						array(
+						'menu_class'     => 'main-menu text-capitalize',
+						'theme_location' => 'main-menu'
+					));
+				?>
+			</nav> <!-- /.mainNavigation -->
 
-			</div> <!-- /.col-xs-6 -->
+		</div> <!-- /.pageWrapperLayout -->
 
-			<div class="col-xs-6 text-xs-right">
+	</header> <!-- /.mainHeader  -->
 
-				<!-- Header Data -->
-				<span class="mainHeader__slogan">
-					<!-- Icono --> 
-					<i>
-						<img src="<?= IMAGES ?>/icons/icon_header.png" alt="sermeco-pagina" class="img-fluid" />
-					</i>
-					<?= __("Estás en Sermeco SAC" , "LANG"); ?>
-				</span>
 
-				<!-- Header Links -->
-				<ul class="mainHeader__links">
-					<li>
-						<a href="">Inicio</a>
-					</li>
-					<li>
-						<a href="">Contáctanos</a>
-					</li>
-				</ul> <!-- /.mainHeader__links -->
-				
-			</div> <!-- /.col-xs-6 -->
 
-		</div> 	<!-- /.row -->
-		
-		<!-- Menú de Navegación -->
-		<nav class="mainNavigation">
-			<?php 
-				wp_nav_menu(
-					array(
-					'menu_class'     => 'main-menu text-capitalize',
-					'theme_location' => 'main-menu'
-				));
-			?>
-		</nav> <!-- /.mainNavigation -->
 
-	</div> <!-- /.pageWrapperLayout -->
 
-</header> <!-- /.mainHeader  -->
+
 
 
 

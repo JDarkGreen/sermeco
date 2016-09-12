@@ -26,6 +26,9 @@ include( locate_template("partials/carouseles/section-clients.php") );
 
 	<script> var url = "<?= THEMEROOT ?>"; </script>
 
+
+	</div> <!-- /end of wrapper slidebars -->
+
 </body>
 </html>
 
