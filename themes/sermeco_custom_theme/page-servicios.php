@@ -24,7 +24,7 @@
 	$first_service = $all_services[0];
 
 	// Seteamos la variable banner de acuerdo al post
-	$banner = $first_service;  
+	$banner = $post;  
 
 	include( locate_template("partials/common/banner-common-pages.php") ); 
 

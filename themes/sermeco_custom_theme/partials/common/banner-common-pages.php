@@ -15,6 +15,8 @@
 					#Obtenemos el campo personalizado img banner
 					$img_banner = get_post_meta ($banner->ID, 'input_img_banner_'.$banner->ID , true);
 
+					$img_banner = empty($img_banner) ? wp_get_attachment_url( get_post_thumbnail_id( $banner->ID ) ) : $img_banner;
+
 					#Si está vacio o tiene un número negativo entonces seteamos imágen al azar
 					$img_banner = empty($img_banner) || $img_banner == -1 ? "https://unsplash.it/1920/237" : $img_banner;
 				endif; 
